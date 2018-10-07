@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {background:black;}
+		#disco{width: 200px;
+			display: block;
+			margin: auto;
+		}
+	h1 {font-size: 80px;
+		color: white;
+		margin-left: 350px;
+		}
+
+		#ttt{width: 50px;
+			height: 50px;
+			background:blue;
+			border-radius:50%;
+			position: absolute;
+			bottom: 100px;
+			animation: drop 15s infinite;
+		}
+
+		@keyframes drop{
+			from{margin-left: 0px; }
+			to{margin-left: 800px;}
+		}
+
+
+	</style>
+</head>
+<body>
+	<img src="disco_ball.gif" id="disco">
+	<h1>-디스코 콜라텍 오픈 전-</h1>
+	<div id="ttt"></div>
+	<script type="text/javascript">
+		var total = 0;
+		for(var i=0; i<6;i++){
+			var j = document.getElementById("ttt");
+			var newttt = j.cloneNode(true);
+			newttt.style.left = Math.random()*window.innerWidth + "px";
+			newttt.style.top = Math.random()*window.innerHeight + "px";
+			newttt.style.animationDuration = 30;
+			newttt.style.background = randomColor();
+			document.body.appendChild(newttt);
+
+		
+		}
+			function randomColor(){
+				var a = Math.random ()*255;
+				var b = Math.random ()*255;
+				var c = Math.random ()*255;
+				var text = "rgb("+a+", "+b+", "+c+")";
+				return text;
+			}
+
+	</script>
+</body>
+</html>
